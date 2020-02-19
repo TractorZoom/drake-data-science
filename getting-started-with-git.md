@@ -66,6 +66,9 @@ Here are some common scenarios you'll likely encounter with managing your code:
 
 #### I have a teammate who pushed code to github, and I want it!
 
+- [Pulling changes from github via the command line](https://help.github.com/en/github/using-git/getting-changes-from-a-remote-repository)
+- [Pulling changes from github via the desktop client](https://help.github.com/en/desktop/contributing-to-projects/syncing-your-branch)
+
 #### We want my code to join our working copy
 
 - [Creating a pull request in github](https://help.github.com/en/desktop/contributing-to-projects/creating-a-pull-request)
@@ -73,33 +76,54 @@ Here are some common scenarios you'll likely encounter with managing your code:
 #### What does it look like to do this right?
 
 ```bash
-engineering-content git:(master) git checkout -b "feature/show-branch-push"
-Switched to a new branch 'feature/show-branch-push'
-➜  engineering-content git:(feature/show-branch-push) ✗ git add .
-➜  engineering-content git:(feature/show-branch-push) ✗ git commit -m "updated how to use git"
-[feature/show-branch-push 68f842d] updated how to use git
- 1 file changed, 28 insertions(+), 1 deletion(-)
-➜  engineering-content git:(feature/show-branch-push) git push
-fatal: The current branch feature/show-branch-push has no upstream branch.
+➜  drake-data-science git:(master) ✗ git clone https://github.com/TractorZoom/drake-data-science.git
+Cloning into 'drake-data-science'...
+remote: Enumerating objects: 13, done.
+remote: Counting objects: 100% (13/13), done.
+remote: Compressing objects: 100% (10/10), done.
+remote: Total 13 (delta 4), reused 10 (delta 2), pack-reused 0
+Unpacking objects: 100% (13/13), done.
+➜  drake-data-science git:(master) git checkout -b "updating-workflow"
+Switched to a new branch 'updating-workflow'
+➜  drake-data-science git:(updating-workflow) git add .
+➜  drake-data-science git:(updating-workflow) ✗ git commit -m "adding placeholder for workflow"
+[updating-workflow a5d570f] adding placeholder for workflow
+ 1 file changed, 2 insertions(+)
+➜  drake-data-science git:(updating-workflow) git push
+fatal: The current branch updating-workflow has no upstream branch.
 To push the current branch and set the remote as upstream, use
 
-    git push --set-upstream origin feature/show-branch-push
+    git push --set-upstream origin updating-workflow
 
-➜  engineering-content git:(feature/show-branch-push) git push --set-upstream origin feature/show-branch-push
-Enumerating objects: 9, done.
-Counting objects: 100% (9/9), done.
+➜  drake-data-science git:(updating-workflow) git push --set-upstream origin updating-workflow
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
 Delta compression using up to 12 threads
-Compressing objects: 100% (5/5), done.
-Writing objects: 100% (5/5), 1010 bytes | 1010.00 KiB/s, done.
-Total 5 (delta 2), reused 0 (delta 0)
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 354 bytes | 354.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
 remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
-remote:
-remote: Create a pull request for 'feature/show-branch-push' on GitHub by visiting:
-remote:      https://github.com/TractorZoom/engineering-content/pull/new/feature/show-branch-push
-remote:
-To https://github.com/TractorZoom/engineering-content.git
- * [new branch]      feature/show-branch-push -> feature/show-branch-push
-Branch 'feature/show-branch-push' set up to track remote branch 'feature/show-branch-push' from 'origin'.
+remote: 
+remote: Create a pull request for 'updating-workflow' on GitHub by visiting:
+remote:      https://github.com/TractorZoom/drake-data-science/pull/new/updating-workflow
+remote: 
+To https://github.com/TractorZoom/drake-data-science.git
+ * [new branch]      updating-workflow -> updating-workflow
+Branch 'updating-workflow' set up to track remote branch 'updating-workflow' from 'origin'.
+➜  drake-data-science git:(updating-workflow) git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+➜  drake-data-science git:(master) git pull
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (1/1), done.
+From https://github.com/TractorZoom/drake-data-science
+   4525169..1304153  master     -> origin/master
+Updating 4525169..1304153
+Fast-forward
+ getting-started-with-git.md | 2 ++
+ 1 file changed, 2 insertions(+)
 ```
 
 #### I am a part of an organization and I want to allow outside collaborators on a private repository
