@@ -64,6 +64,8 @@ Here are some common scenarios you'll likely encounter with managing your code:
 - [Pushing a branch to github via the desktop client](https://help.github.com/en/desktop/contributing-to-projects/syncing-your-branch)
 - [Pushing a branch to github via the command line](https://help.github.com/en/github/using-git/pushing-commits-to-a-remote-repository)
 
+#### I have a teammate who pushed code to github, and I want it!
+
 #### We want my code to join our working copy
 
 - [Creating a pull request in github](https://help.github.com/en/desktop/contributing-to-projects/creating-a-pull-request)
